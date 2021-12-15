@@ -54,7 +54,9 @@ public class MessagingConfiguration {
     }
 
     @Bean
-    public QueueMessageHandlerFactory queueMessageHandlerFactory(AmazonSQSAsync amazonSQS, BeanFactory beanFactory) {
+    public QueueMessageHandlerFactory queueMessageHandlerFactory(
+            AmazonSQSAsync amazonSQS, BeanFactory beanFactory) {
+
         ObjectMapper objectMapper = new ObjectMapper();
         objectMapper.registerModule(new JavaTimeModule());
 

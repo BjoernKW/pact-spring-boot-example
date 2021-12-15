@@ -18,6 +18,7 @@
 		<log4j2.version>2.16.0</log4j2.version>
 		<pact.version>4.3.2</pact.version>
 		<testcontainers.version>1.16.2</testcontainers.version>
+		<awaitility.version>4.1.1</awaitility.version>
 		<spring.cloud.aws.version>2.3.2</spring.cloud.aws.version>
 	</properties>
 	<dependencies>
@@ -59,6 +60,12 @@
 		<dependency>
 			<groupId>org.testcontainers</groupId>
 			<artifactId>junit-jupiter</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.awaitility</groupId>
+			<artifactId>awaitility</artifactId>
+			<version>${awaitility.version}</version>
 			<scope>test</scope>
 		</dependency>
 		<dependency>

@@ -4,7 +4,8 @@ import com.amazonaws.auth.AWSStaticCredentialsProvider;
 import com.amazonaws.auth.BasicAWSCredentials;
 import com.amazonaws.client.builder.AwsClientBuilder;
 import com.amazonaws.services.sns.AmazonSNS;
-import com.amazonaws.services.sns.AmazonSNSClientBuilder;
+import com.amazonaws.services.sns.AmazonSNSAsync;
+import com.amazonaws.services.sns.AmazonSNSAsyncClientBuilder;
 import com.amazonaws.services.sqs.AmazonSQSAsync;
 import com.amazonaws.services.sqs.AmazonSQSAsyncClientBuilder;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -43,19 +44,6 @@ public class MessagingConfiguration {
 
     @Value("${cloud.aws.sqs.endpoint}")
     private String localStackSqsEndpoint;
-
-    @Bean
-    public NotificationMessagingTemplate notificationMessagingTemplate(AmazonSNS amazonSNS) {
-        return new NotificationMessagingTemplate(amazonSNS);
-    }
-
-    @Bean
-    public AmazonSNS amazonSNS() {
-        return AmazonSNSClientBuilder.standard()
-                .withEndpointConfiguration(new AwsClientBuilder.EndpointConfiguration(localStackSnsEndpoint, awsRegion))
-                .withCredentials(new AWSStaticCredentialsProvider(new BasicAWSCredentials(awsAccessKey, awsSecretKey)))
-                .build();
-    }
 
     @Bean
     public AmazonSQSAsync amazonSqs() {
@@ -107,5 +95,18 @@ public class MessagingConfiguration {
                 new NotificationMessageArgumentResolver(compositeMessageConverter)));
 
         return factory;
+    }
+
+    @Bean
+    public AmazonSNSAsync amazonSNS() {
+        return AmazonSNSAsyncClientBuilder.standard()
+                .withEndpointConfiguration(new AwsClientBuilder.EndpointConfiguration(localStackSnsEndpoint, awsRegion))
+                .withCredentials(new AWSStaticCredentialsProvider(new BasicAWSCredentials(awsAccessKey, awsSecretKey)))
+                .build();
+    }
+
+    @Bean
+    public NotificationMessagingTemplate notificationMessagingTemplate(AmazonSNS amazonSNS) {
+        return new NotificationMessagingTemplate(amazonSNS);
     }
 }

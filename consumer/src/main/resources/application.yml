@@ -4,8 +4,6 @@ producer:
 
 sqs:
   queue: test-queue
-sns:
-  topic: test-topic
 
 cloud:
   aws:
