@@ -16,12 +16,21 @@
 	<properties>
 		<java.version>11</java.version>
 		<log4j2.version>2.16.0</log4j2.version>
-		<pact-jvm-junit.version>4.0.10</pact-jvm-junit.version>
+		<pact.version>4.3.2</pact.version>
+		<spring.cloud.aws.version>2.3.2</spring.cloud.aws.version>
 	</properties>
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>io.awspring.cloud</groupId>
+			<artifactId>spring-cloud-starter-aws</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>io.awspring.cloud</groupId>
+			<artifactId>spring-cloud-starter-aws-messaging</artifactId>
 		</dependency>
 
 		<dependency>
@@ -42,11 +51,24 @@
 		</dependency>
 
 		<dependency>
-			<groupId>au.com.dius</groupId>
-			<artifactId>pact-jvm-consumer-junit</artifactId>
-			<version>${pact-jvm-junit.version}</version>
+			<groupId>au.com.dius.pact.consumer</groupId>
+			<artifactId>junit5</artifactId>
+			<version>${pact.version}</version>
+			<scope>test</scope>
 		</dependency>
 	</dependencies>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>io.awspring.cloud</groupId>
+				<artifactId>spring-cloud-aws-dependencies</artifactId>
+				<version>${spring.cloud.aws.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
 
 	<build>
 		<plugins>
