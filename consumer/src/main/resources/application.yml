@@ -1,0 +1,20 @@
+producer:
+  service:
+    url: http://localhost:8081
+
+sqs:
+  queue: test-queue
+sns:
+  topic: test-topic
+
+cloud:
+  aws:
+    credentials:
+      access-key: test
+      secret-key: test
+    region:
+      static: us-east-1
+    sqs:
+      endpoint: http://localhost:4566
+    sns:
+      endpoint: http://localhost:4566
