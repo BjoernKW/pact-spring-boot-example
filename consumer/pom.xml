@@ -16,6 +16,7 @@
 	<properties>
 		<java.version>11</java.version>
 		<log4j2.version>2.16.0</log4j2.version>
+		<pact-jvm-junit.version>4.0.10</pact-jvm-junit.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -38,6 +39,12 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>au.com.dius</groupId>
+			<artifactId>pact-jvm-consumer-junit</artifactId>
+			<version>${pact-jvm-junit.version}</version>
 		</dependency>
 	</dependencies>
 
