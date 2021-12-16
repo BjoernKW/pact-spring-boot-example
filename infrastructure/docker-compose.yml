@@ -23,14 +23,3 @@ services:
       PACT_BROKER_DATABASE_HOST: postgres
       PACT_BROKER_DATABASE_NAME: postgres
       PACT_BROKER_WEBHOOK_SCHEME_WHITELIST: http https
-  localstack:
-    image: localstack/localstack
-    ports:
-      - "${LOCALSTACK_PORT}:4566"
-    environment:
-      - SERVICES=sqs,sns
-      - DEFAULT_REGION=eu-central-1
-      - DEBUG=1
-    volumes:
-      - "./localstack_setup.sh:/docker-entrypoint-initaws.d/setup.sh"
-    hostname: localstack

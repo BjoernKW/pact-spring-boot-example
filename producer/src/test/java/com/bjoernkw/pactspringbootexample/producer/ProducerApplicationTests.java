@@ -12,16 +12,10 @@ import java.io.File;
 @Testcontainers(disabledWithoutDocker = true)
 class ProducerApplicationTests {
 
-	private static final String POSTGRESQL_PORT = "5433";
-
-	private static final String PACT_PORT = "8082";
-
 	private static final String LOCALSTACK_PORT = "4567";
 
 	public static DockerComposeContainer<?> environment =
-			new DockerComposeContainer<>(new File("../infrastructure/docker-compose.yml"))
-					.withEnv("POSTGRESQL_PORT", POSTGRESQL_PORT)
-					.withEnv("PACT_PORT", PACT_PORT)
+			new DockerComposeContainer<>(new File("docker-compose.yml"))
 					.withEnv("LOCALSTACK_PORT", LOCALSTACK_PORT)
 					.withExposedService("localstack", Integer.parseInt(LOCALSTACK_PORT), Wait.forListeningPort())
 					.withLocalCompose(true);

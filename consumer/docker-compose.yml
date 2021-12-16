@@ -1,0 +1,14 @@
+version: "3"
+
+services:
+  localstack:
+    image: localstack/localstack
+    ports:
+      - "${LOCALSTACK_PORT}:4566"
+    environment:
+      - SERVICES=sqs,sns
+      - DEFAULT_REGION=eu-central-1
+      - DEBUG=1
+    volumes:
+      - "../infrastructure/localstack_setup.sh:/docker-entrypoint-initaws.d/setup.sh"
+    hostname: localstack
