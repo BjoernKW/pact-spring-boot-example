@@ -1,4 +1,4 @@
-package com.bjoernkw.pactspringbootexample.producer.messaging;
+package com.bjoernkw.pactspringbootexample.producer.port.messaging;
 
 import io.awspring.cloud.messaging.core.NotificationMessagingTemplate;
 import org.springframework.beans.factory.annotation.Autowired;

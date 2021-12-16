@@ -1,4 +1,4 @@
-package com.bjoernkw.pactspringbootexample.producer.rest;
+package com.bjoernkw.pactspringbootexample.producer.port;
 
 import lombok.Data;
 

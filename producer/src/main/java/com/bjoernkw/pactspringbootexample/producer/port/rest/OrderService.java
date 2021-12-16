@@ -1,5 +1,6 @@
-package com.bjoernkw.pactspringbootexample.producer.rest;
+package com.bjoernkw.pactspringbootexample.producer.port.rest;
 
+import com.bjoernkw.pactspringbootexample.producer.port.OrderDTO;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
