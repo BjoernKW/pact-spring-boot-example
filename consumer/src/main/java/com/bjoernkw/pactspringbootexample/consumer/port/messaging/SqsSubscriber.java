@@ -1,4 +1,4 @@
-package com.bjoernkw.pactspringbootexample.consumer.messaging;
+package com.bjoernkw.pactspringbootexample.consumer.port.messaging;
 
 import io.awspring.cloud.messaging.config.annotation.NotificationMessage;
 import io.awspring.cloud.messaging.listener.SqsMessageDeletionPolicy;
@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 public class SqsSubscriber {
 
     @SqsListener(value = "${sqs.queue}", deletionPolicy = SqsMessageDeletionPolicy.ON_SUCCESS)
-    public void subscribeToSQS(final @NotificationMessage String message) {
-        log.info("Event Received: {}", message);
+    public void subscribeToSQS(final @NotificationMessage EventMessage eventMessage) {
+        log.info("Event received: {}", eventMessage);
     }
 }

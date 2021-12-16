@@ -18,7 +18,6 @@
 		<log4j2.version>2.16.0</log4j2.version>
 		<pact.version>4.3.2</pact.version>
 		<testcontainers.version>1.16.2</testcontainers.version>
-		<awaitility.version>4.1.1</awaitility.version>
 		<spring.cloud.aws.version>2.3.2</spring.cloud.aws.version>
 	</properties>
 	<dependencies>
@@ -63,12 +62,6 @@
 			<scope>test</scope>
 		</dependency>
 		<dependency>
-			<groupId>org.awaitility</groupId>
-			<artifactId>awaitility</artifactId>
-			<version>${awaitility.version}</version>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
 			<groupId>au.com.dius.pact.consumer</groupId>
 			<artifactId>junit5</artifactId>
 			<version>${pact.version}</version>
@@ -97,19 +90,28 @@
 
 	<build>
 		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-				<configuration>
-					<excludes>
-						<exclude>
-							<groupId>org.projectlombok</groupId>
-							<artifactId>lombok</artifactId>
-						</exclude>
-					</excludes>
-				</configuration>
-			</plugin>
-		</plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <excludes>
+                        <exclude>
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok</artifactId>
+                        </exclude>
+                    </excludes>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <configuration>
+                    <systemPropertyVariables>
+                        <pact_do_not_track>true</pact_do_not_track>
+                    </systemPropertyVariables>
+                </configuration>
+            </plugin>
+        </plugins>
 	</build>
 
 </project>

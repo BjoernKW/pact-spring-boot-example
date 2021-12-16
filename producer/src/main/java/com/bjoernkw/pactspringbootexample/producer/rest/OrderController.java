@@ -19,10 +19,10 @@ public class OrderController {
         this.orderService = orderService;
     }
 
-    @GetMapping("/{orderID}")
-    public OrderDTO getOrder(@PathVariable("orderID") String orderID) {
+    @GetMapping("/{orderId}")
+    public OrderDTO getOrder(@PathVariable("orderId") String orderId) {
         log.info("HTTP request for placing a new order");
 
-        return orderService.getOrder(orderID);
+        return orderService.getOrder(orderId);
     }
 }

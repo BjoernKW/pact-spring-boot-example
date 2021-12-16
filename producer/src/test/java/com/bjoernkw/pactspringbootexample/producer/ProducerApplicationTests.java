@@ -14,11 +14,11 @@ class ProducerApplicationTests {
 
 	private static final String LOCALSTACK_PORT = "4567";
 
-	public static DockerComposeContainer<?> environment =
-			new DockerComposeContainer<>(new File("docker-compose.yml"))
-					.withEnv("LOCALSTACK_PORT", LOCALSTACK_PORT)
-					.withExposedService("localstack", Integer.parseInt(LOCALSTACK_PORT), Wait.forListeningPort())
-					.withLocalCompose(true);
+	static DockerComposeContainer<?> environment =
+            new DockerComposeContainer<>(new File("docker-compose.yml"))
+                    .withEnv("LOCALSTACK_PORT", LOCALSTACK_PORT)
+                    .withExposedService("localstack", Integer.parseInt(LOCALSTACK_PORT), Wait.forListeningPort())
+                    .withLocalCompose(true);
 
 	static {
 		environment.start();

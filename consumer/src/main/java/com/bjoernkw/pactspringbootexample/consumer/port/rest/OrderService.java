@@ -1,5 +1,6 @@
-package com.bjoernkw.pactspringbootexample.consumer.rest;
+package com.bjoernkw.pactspringbootexample.consumer.port.rest;
 
+import com.bjoernkw.pactspringbootexample.consumer.port.OrderDTO;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
@@ -21,12 +22,12 @@ public class OrderService {
         this.restTemplate = restTemplate;
     }
 
-    public OrderDTO getOrder(String orderID) {
-        log.info("Getting order {} from producer", orderID);
+    public OrderDTO getOrder(String orderId) {
+        log.info("Getting order {} from producer", orderId);
 
         ResponseEntity<OrderDTO> orderDTOResponseEntity
-                = restTemplate.getForEntity(producerServiceURL + "/" + orderID, OrderDTO.class);
+                = restTemplate.getForEntity(producerServiceURL + "/" + orderId, OrderDTO.class);
 
-        return new OrderDTO(Objects.requireNonNull(orderDTOResponseEntity.getBody()).getOrderID());
+        return new OrderDTO(Objects.requireNonNull(orderDTOResponseEntity.getBody()).getOrderId());
     }
 }

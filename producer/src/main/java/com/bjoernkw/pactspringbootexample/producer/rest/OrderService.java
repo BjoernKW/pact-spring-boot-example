@@ -7,9 +7,9 @@ import org.springframework.stereotype.Service;
 @Slf4j
 public class OrderService {
 
-    public OrderDTO getOrder(String orderID) {
-        log.info("Sending order {} to consumer", orderID);
+    public OrderDTO getOrder(String orderId) {
+        log.info("Sending order {} to consumer", orderId);
 
-        return new OrderDTO(orderID);
+        return new OrderDTO(orderId);
     }
 }
