@@ -18,7 +18,7 @@ public class SnsPublisher {
     @Value("${sns.topic}")
     private String snsTopic;
 
-    public void send(String message) {
-        this.notificationMessagingTemplate.sendNotification(snsTopic, message, message);
+    public void send(EventMessage eventMessage) {
+        this.notificationMessagingTemplate.sendNotification(snsTopic, eventMessage.getEventType(), eventMessage.getEventId());
     }
 }

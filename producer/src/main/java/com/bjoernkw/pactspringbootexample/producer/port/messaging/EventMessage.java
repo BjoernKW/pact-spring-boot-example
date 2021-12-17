@@ -1,4 +1,4 @@
-package com.bjoernkw.pactspringbootexample.consumer.port.messaging;
+package com.bjoernkw.pactspringbootexample.producer.port.messaging;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -11,9 +11,9 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class EventMessage {
 
-  private String eventId;
+    private String eventId;
 
-  private String eventType;
+    private String eventType;
 
-  private String data;
+    private String data;
 }

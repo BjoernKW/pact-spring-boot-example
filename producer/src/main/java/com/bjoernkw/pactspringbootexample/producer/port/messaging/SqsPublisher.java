@@ -14,7 +14,7 @@ public class SqsPublisher {
     @Value("${sqs.queue}")
     private String queue;
 
-    public void send(String message) {
-        queueMessagingTemplate.convertAndSend(queue, message);
+    public void send(EventMessage eventMessage) {
+        queueMessagingTemplate.convertAndSend(queue, eventMessage);
     }
 }
