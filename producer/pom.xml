@@ -15,7 +15,7 @@
 	<description>Producer for example implementation of contract testing with Pact and Spring Boot</description>
 	<properties>
 		<java.version>11</java.version>
-		<pact.version>4.3.4</pact.version>
+		<pact.version>4.3.5</pact.version>
 		<testcontainers.version>1.16.3</testcontainers.version>
 		<spring.cloud.aws.version>2.3.3</spring.cloud.aws.version>
 	</properties>
