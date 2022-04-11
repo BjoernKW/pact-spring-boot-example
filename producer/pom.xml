@@ -17,7 +17,7 @@
 		<java.version>11</java.version>
 		<pact.version>4.3.6</pact.version>
 		<testcontainers.version>1.16.3</testcontainers.version>
-		<spring.cloud.aws.version>2.4.0</spring.cloud.aws.version>
+		<spring.cloud.aws.version>2.4.1</spring.cloud.aws.version>
 	</properties>
 	<dependencies>
 		<dependency>
