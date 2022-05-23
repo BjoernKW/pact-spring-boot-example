@@ -7,7 +7,7 @@ and [Spring Boot](https://spring.io/projects/spring-boot).
 
 ### Prerequisites
 
-* [Java 11](https://www.oracle.com/java/technologies/javase-jdk11-downloads.html)
+* [Java 17](https://openjdk.java.net/projects/jdk/17/)
 * [Maven](https://maven.apache.org/)
 * [Docker](https://www.docker.com/)
 

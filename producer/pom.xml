@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.6.6</version>
+		<version>2.7.0</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.bjoernkw.pact-spring-boot-example</groupId>
@@ -14,10 +14,10 @@
 	<name>producer</name>
 	<description>Producer for example implementation of contract testing with Pact and Spring Boot</description>
 	<properties>
-		<java.version>11</java.version>
-		<pact.version>4.3.6</pact.version>
-		<testcontainers.version>1.16.3</testcontainers.version>
-		<spring.cloud.aws.version>2.4.0</spring.cloud.aws.version>
+		<java.version>17</java.version>
+		<pact.version>4.3.7</pact.version>
+		<testcontainers.version>1.17.2</testcontainers.version>
+		<spring.cloud.aws.version>2.4.1</spring.cloud.aws.version>
 	</properties>
 	<dependencies>
 		<dependency>
