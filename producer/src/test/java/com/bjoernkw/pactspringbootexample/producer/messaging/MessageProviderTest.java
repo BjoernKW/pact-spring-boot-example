@@ -39,6 +39,8 @@ class MessageProviderTest {
 
     @BeforeEach
     void before(PactVerificationContext pactVerificationContext) {
+        // Set the Pact test target to "messaging". Otherwise, only request and response interactions would be supported:
+        // "Only request/response interactions can be used with an HTTP test target"
         pactVerificationContext.setTarget(new MessageTestTarget());
     }
 

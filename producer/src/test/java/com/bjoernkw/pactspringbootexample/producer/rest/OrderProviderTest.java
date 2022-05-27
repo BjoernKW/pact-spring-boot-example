@@ -37,7 +37,7 @@ class OrderProviderTest {
     }
 
     @BeforeEach
-    void before(PactVerificationContext context) {
+    void before(PactVerificationContext pactVerificationContext) {
         Mockito
                 .when(orderService.getOrder("1"))
                 .thenReturn(
@@ -47,7 +47,8 @@ class OrderProviderTest {
                                 .build()
                 );
 
-        context.setTarget(new MockMvcTestTarget(mockMvc));
+        // Set the MockMvc context as the Pact test target (instead of an actual application context).
+        pactVerificationContext.setTarget(new MockMvcTestTarget(mockMvc));
     }
 
     @State("Order exists")
