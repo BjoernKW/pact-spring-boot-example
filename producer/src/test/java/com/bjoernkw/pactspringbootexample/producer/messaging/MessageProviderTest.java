@@ -8,7 +8,7 @@ import au.com.dius.pact.provider.junit5.PactVerificationContext;
 import au.com.dius.pact.provider.junit5.PactVerificationInvocationContextProvider;
 import au.com.dius.pact.provider.junitsupport.Provider;
 import au.com.dius.pact.provider.junitsupport.State;
-import au.com.dius.pact.provider.junitsupport.loader.PactFolder;
+import au.com.dius.pact.provider.junitsupport.loader.PactBroker;
 import com.bjoernkw.pactspringbootexample.producer.port.OrderDTO;
 import com.bjoernkw.pactspringbootexample.producer.port.messaging.EventMessage;
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -22,7 +22,7 @@ import org.springframework.boot.test.autoconfigure.json.JsonTest;
 
 @JsonTest
 @Provider("MessageProvider")
-@PactFolder("../consumer/target/pacts")
+@PactBroker
 @Slf4j
 class MessageProviderTest {
 

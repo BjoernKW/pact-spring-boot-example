@@ -4,7 +4,7 @@ import au.com.dius.pact.provider.junit5.PactVerificationContext;
 import au.com.dius.pact.provider.junit5.PactVerificationInvocationContextProvider;
 import au.com.dius.pact.provider.junitsupport.Provider;
 import au.com.dius.pact.provider.junitsupport.State;
-import au.com.dius.pact.provider.junitsupport.loader.PactFolder;
+import au.com.dius.pact.provider.junitsupport.loader.PactBroker;
 import au.com.dius.pact.provider.spring.junit5.MockMvcTestTarget;
 import com.bjoernkw.pactspringbootexample.producer.port.OrderDTO;
 import com.bjoernkw.pactspringbootexample.producer.port.rest.OrderService;
@@ -20,7 +20,7 @@ import org.springframework.test.web.servlet.MockMvc;
 
 @WebMvcTest
 @Provider("OrderProvider")
-@PactFolder("../consumer/target/pacts")
+@PactBroker
 @Slf4j
 class OrderProviderTest {
 
