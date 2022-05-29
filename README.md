@@ -50,6 +50,7 @@ with a [PostgreSQL](https://www.postgresql.org/) database as its data store.
 * [Sharing Pacts with the Pact Broker](https://docs.pact.io/getting_started/sharing_pacts)
 * [Publishing and retrieving pacts](https://docs.pact.io/pact_broker/publishing_and_retrieving_pacts)
 * [Download pacts from a pact-broker](https://docs.pact.io/implementation_guides/jvm/provider/junit#download-pacts-from-a-pact-broker)
+* [Branch with Pact Broker configuration](https://github.com/BjoernKW/pact-spring-boot-example/tree/Using_a_Pact_Broker)
 
 ### Further Reading
 
