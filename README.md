@@ -33,6 +33,28 @@ an `infrastructure` directory which contains a sample Docker setup for running
 a [Pact Broker](https://github.com/pact-foundation/pact_broker)
 with a [PostgreSQL](https://www.postgresql.org/) database as its data store.
 
+## Additional Resources
+
+### Getting Started
+
+* [Pact Introduction](https://docs.pact.io/)
+* [What is Pact good for?](https://docs.pact.io/getting_started/what_is_pact_good_for)
+
+### Pact With JUnit & Spring Boot
+
+* [Pact Junit 5 Extension](https://docs.pact.io/implementation_guides/jvm/provider/junit5)
+* [Pact Spring/JUnit5 Support](https://docs.pact.io/implementation_guides/jvm/provider/junit5spring)
+
+### Pact Broker
+
+* [Sharing Pacts with the Pact Broker](https://docs.pact.io/getting_started/sharing_pacts)
+* [Publishing and retrieving pacts](https://docs.pact.io/pact_broker/publishing_and_retrieving_pacts)
+* [Download pacts from a pact-broker](https://docs.pact.io/implementation_guides/jvm/provider/junit#download-pacts-from-a-pact-broker)
+
+### Further Reading
+
+* [Testing a Spring Message Producer and Consumer against a Contract with Pact](https://reflectoring.io/cdc-pact-messages/)
+
 ## Built With
 
 * [Spring Boot](https://projects.spring.io/spring-boot/)
