@@ -12,7 +12,7 @@ import java.io.File;
 @Testcontainers(disabledWithoutDocker = true)
 class ProducerApplicationTests {
 
-	private static final String LOCALSTACK_PORT = "4567";
+	private static final String LOCALSTACK_PORT = "4566";
 
 	static DockerComposeContainer<?> environment =
             new DockerComposeContainer<>(new File("docker-compose.yml"))
