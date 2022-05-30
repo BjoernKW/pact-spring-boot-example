@@ -22,7 +22,7 @@ import org.springframework.boot.test.autoconfigure.json.JsonTest;
 
 @JsonTest
 @Provider("MessageProvider")
-@PactBroker(url = "http://localhost")
+@PactBroker
 @Slf4j
 class MessageProviderTest {
 

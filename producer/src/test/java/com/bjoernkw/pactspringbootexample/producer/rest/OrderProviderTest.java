@@ -20,7 +20,7 @@ import org.springframework.test.web.servlet.MockMvc;
 
 @WebMvcTest
 @Provider("OrderProvider")
-@PactBroker(url = "http://localhost")
+@PactBroker
 @Slf4j
 class OrderProviderTest {
 
