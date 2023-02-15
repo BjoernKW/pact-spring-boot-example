@@ -15,7 +15,7 @@
 	<description>Consumer for example implementation of contract testing with Pact and Spring Boot</description>
 	<properties>
 		<java.version>17</java.version>
-		<pact.version>4.4.3</pact.version>
+		<pact.version>4.4.6</pact.version>
 		<testcontainers.version>1.17.6</testcontainers.version>
 		<spring.cloud.aws.version>2.4.2</spring.cloud.aws.version>
 	</properties>
