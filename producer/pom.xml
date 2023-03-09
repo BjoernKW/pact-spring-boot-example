@@ -15,9 +15,10 @@
 	<description>Producer for example implementation of contract testing with Pact and Spring Boot</description>
 	<properties>
 		<java.version>17</java.version>
+		<snakeyaml.version>2.0</snakeyaml.version>
 		<pact.version>4.5.2</pact.version>
 		<testcontainers.version>1.17.6</testcontainers.version>
-		<spring.cloud.aws.version>2.4.2</spring.cloud.aws.version>
+		<spring.cloud.aws.version>3.0.0-RC1</spring.cloud.aws.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -26,11 +27,11 @@
 		</dependency>
 		<dependency>
 			<groupId>io.awspring.cloud</groupId>
-			<artifactId>spring-cloud-starter-aws</artifactId>
+			<artifactId>spring-cloud-aws-starter-sns</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>io.awspring.cloud</groupId>
-			<artifactId>spring-cloud-starter-aws-messaging</artifactId>
+			<artifactId>spring-cloud-aws-starter-sqs</artifactId>
 		</dependency>
 
 		<dependency>

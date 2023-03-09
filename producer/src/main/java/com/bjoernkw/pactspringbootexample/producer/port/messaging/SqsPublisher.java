@@ -1,20 +1,22 @@
 package com.bjoernkw.pactspringbootexample.producer.port.messaging;
 
-import io.awspring.cloud.messaging.core.QueueMessagingTemplate;
-import org.springframework.beans.factory.annotation.Autowired;
+import io.awspring.cloud.sqs.operations.SqsTemplate;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 @Component
 public class SqsPublisher {
 
-    @Autowired
-    private QueueMessagingTemplate queueMessagingTemplate;
+    private final SqsTemplate sqsTemplate;
+
+    public SqsPublisher(SqsTemplate sqsTemplate) {
+        this.sqsTemplate = sqsTemplate;
+    }
 
     @Value("${sqs.queue}")
     private String queue;
 
     public void send(EventMessage eventMessage) {
-        queueMessagingTemplate.convertAndSend(queue, eventMessage);
+        sqsTemplate.send(queue, eventMessage);
     }
 }
